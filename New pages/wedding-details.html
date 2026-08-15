@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egide &amp; Deborah — Wedding Details</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF5EE;
+    --ivory-deep:#F3EBDF;
+    --forest:#33473A;
+    --forest-deep:#22301F;
+    --rose:#C98A93;
+    --blush:#EAD3CE;
+    --gold:#B98D4B;
+    --wine:#6B2D3C;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory-deep);
+    font-family:'Jost',sans-serif;
+    color:var(--forest-deep);
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    background:var(--ivory);
+    position:relative;
+    overflow:hidden;
+  }
+  header{
+    position:relative;
+    text-align:center;
+    padding:64px 32px 48px;
+    border-bottom:1px solid rgba(51,71,58,0.16);
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:64px;
+    height:1px;
+    background:var(--gold);
+  }
+  .florals{position:absolute;top:0;right:0;pointer-events:none;}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--forest);
+    margin:0 0 20px;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:"";
+    display:inline-block;
+    width:22px;
+    height:1px;
+    background:var(--gold);
+    vertical-align:middle;
+    margin:0 10px 3px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(28px,7vw,38px);
+    line-height:1.15;
+    margin:0;
+    position:relative;
+    z-index:2;
+  }
+  h1 em{
+    display:block;
+    font-style:italic;
+    font-weight:400;
+    color:var(--rose);
+    font-size:0.72em;
+    margin:4px 0;
+  }
+  .sub{
+    margin:20px 0 0;
+    font-size:14px;
+    letter-spacing:0.05em;
+    color:var(--forest);
+  }
+  section{
+    padding:44px 36px;
+    border-bottom:1px solid rgba(51,71,58,0.12);
+  }
+  section:last-of-type{border-bottom:none;}
+  .label{
+    font-size:11px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:24px;
+    margin:0 0 18px;
+    color:var(--forest-deep);
+  }
+  p{
+    margin:0 0 8px;
+    font-size:15px;
+    line-height:1.7;
+    color:#4B5A4E;
+  }
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .timeline li{
+    display:flex;
+    gap:20px;
+    padding:14px 0;
+    border-top:1px solid rgba(51,71,58,0.1);
+  }
+  .timeline li:first-child{border-top:none;}
+  .time{
+    flex:0 0 84px;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--wine);
+  }
+  .event-name{
+    font-size:15px;
+    font-weight:500;
+    color:var(--forest-deep);
+    margin:0;
+  }
+  .event-note{
+    font-size:13px;
+    color:#6B786E;
+    margin:2px 0 0;
+  }
+  .venue-card{
+    background:var(--blush);
+    padding:24px;
+  }
+  .venue-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 4px;
+    color:var(--wine);
+  }
+  .map-link{
+    display:inline-block;
+    margin-top:14px;
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:var(--forest);
+    text-decoration:underline;
+  }
+  .rsvp-box{
+    text-align:center;
+    background:var(--forest);
+    color:var(--ivory);
+    padding:40px 32px;
+  }
+  .rsvp-box h2{color:var(--ivory);}
+  .rsvp-box p{color:rgba(251,245,238,0.85);}
+  .rsvp-deadline{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 18px;
+  }
+  .btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:13px 34px;
+    background:var(--ivory);
+    color:var(--forest);
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    border:1px solid var(--ivory);
+  }
+  .placeholder{
+    font-style:italic;
+    color:#8A968D;
+  }
+  footer{
+    text-align:center;
+    padding:32px;
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:#8A968D;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="florals" width="180" height="200" viewBox="0 0 180 200" aria-hidden="true">
+      <g transform="translate(178,0) rotate(150)">
+        <path d="M0,0 C34,8 58,32 66,70 C72,100 66,130 54,158" fill="none" stroke="#6E8E77" stroke-width="1.6"/>
+        <g fill="#5E7C67">
+          <path d="M5,8 C18,-2 24,-19 18,-36 C8,-24 3,-11 5,8 Z"/>
+          <path d="M18,26 C34,20 45,6 45,-13 C29,-9 19,3 18,26 Z"/>
+          <path d="M32,48 C50,46 64,35 67,16 C50,16 37,29 32,48 Z"/>
+        </g>
+        <g transform="translate(24,-4)">
+          <circle r="4.5" fill="#B98D4B"/>
+          <g fill="#D9A6AC">
+            <ellipse cx="0" cy="-8" rx="4" ry="6"/>
+            <ellipse cx="0" cy="8" rx="4" ry="6"/>
+            <ellipse cx="-8" cy="0" rx="6" ry="4"/>
+            <ellipse cx="8" cy="0" rx="6" ry="4"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <p class="eyebrow">Wedding details</p>
+    <h1>Kwizera Egide<em>&amp;</em>Umutesi Deborah</h1>
+    <p class="sub">Monday, 1st February 2027 &nbsp;·&nbsp; Dove Hotel, Gisozi</p>
+  </header>
+
+  <section>
+    <p class="label">Schedule</p>
+    <h2>The day</h2>
+    <ul class="timeline">
+      <li>
+        <span class="time">12:00</span>
+        <div>
+          <p class="event-name">Guests arrive</p>
+          <p class="event-note">Please be seated by 12:45</p>
+        </div>
+      </li>
+      <li>
+        <span class="time">13:00</span>
+        <div>
+          <p class="event-name">Ceremony</p>
+          <p class="event-note">Dove Hotel, Gisozi</p>
+        </div>
+      </li>
+      <li>
+        <span class="time">15:00</span>
+        <div>
+          <p class="event-name">Reception and lunch</p>
+          <p class="event-note">Speeches, cake and celebration</p>
+        </div>
+      </li>
+      <li>
+        <span class="time">18:00</span>
+        <div>
+          <p class="event-name">Send-off</p>
+        </div>
+      </li>
+    </ul>
+    <p class="placeholder" style="margin-top:14px; font-size:13px;">Times are placeholders — update to match your final run of show.</p>
+  </section>
+
+  <section>
+    <p class="label">Location</p>
+    <h2>Where to find us</h2>
+    <div class="venue-card">
+      <p class="venue-name">Dove Hotel</p>
+      <p>Gisozi, Kigali, Rwanda</p>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dove+Hotel+Gisozi+Kigali" target="_blank" rel="noopener">Get directions →</a>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Attire</p>
+    <h2>Dress code</h2>
+    <p>Garden romance — floral prints, soft pastels and elegant attire. Comfortable shoes recommended for the reception grounds.</p>
+  </section>
+
+  <section class="rsvp-box">
+    <p class="rsvp-deadline placeholder">RSVP by [add your deadline]</p>
+    <h2>Kindly RSVP</h2>
+    <p>Let us know if you'll be joining us so we can plan the day around you.</p>
+    <a class="btn" href="mailto:REPLACE-WITH-EMAIL@example.com">RSVP by email</a>
+  </section>
+
+  <footer>With love, Egide &amp; Deborah</footer>
+</div>
+</body>
+</html>
