@@ -1,226 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lang-en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Egide &amp; Deborah — Save the Date</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500&family=Alex+Brush&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<title>Souvenir & Innocent — The Wedding</title>
 <style>
   :root{
-    --ivory:#F8F4EC;
+    --ivory:#F8F1E3;
+    --ivory-deep:#EFE4CC;
+    --ink:#2A2118;
+    --wine:#4A1420;
+    --wine-deep:#33101A;
+    --gold:#AD8A46;
+    --gold-soft:#C9AD73;
+    --sage:#5F6B4C;
   }
   *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{
     margin:0;
-    padding:48px 16px;
-    background:#1b1b1b;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100vh;
-    font-family:'Jost',sans-serif;
-  }
-  .card {
-    position: relative;
-    width: 100%;
-    max-width: 460px;
-    aspect-ratio: 3 / 4.3;
-    overflow: hidden;
-    color: var(--ivory);
-
-    background:
-      linear-gradient(
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.72)
-      ),
-      url("image.png") center center / cover no-repeat;
-  }
-  .grain{
-    position:absolute;
-    inset:0;
-    opacity:0.35;
-    mix-blend-mode:overlay;
-  }
-  .vignette{
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at 50% 40%, transparent 40%, rgba(0,0,0,0.55) 100%);
-  }
-  .content{
-    position:relative;
-    z-index:3;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:44px 28px 34px;
-    text-align:center;
-  }
-  .script{
-    font-family:'Alex Brush',cursive;
-    font-size:clamp(52px,13vw,72px);
-    line-height:1;
-    margin:0 0 10px;
-    color:var(--ivory);
-    text-shadow:0 2px 18px rgba(0,0,0,0.35);
-  }
-  .names{
-    font-family:'Jost',sans-serif;
-    font-weight:500;
-    font-size:clamp(15px,4vw,18px);
-    letter-spacing:0.30em;
-    margin:0;
-    text-transform:uppercase;
-    color:#FFFFFF;
-    text-shadow:
-      0 1px 5px rgba(0,0,0,0.9),
-      0 2px 12px rgba(0,0,0,0.7);
-  }
-  .spacer{flex:1;}
-  .date-row{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    width:100%;
-  }
-  .date-line{
-    flex:1;
-    height:1px;
-    background:rgba(248,244,236,0.65);
-    max-width:70px;
-  }
-  .month{
-    font-size:14px;
-    letter-spacing:0.3em;
-    font-weight:400;
-  }
-  .day{
-    font-family:serif;
-    font-weight:500;
-    font-size:clamp(70px,20vw,96px);
-    line-height:0.9;
-    padding:0 6px;
-    color:#FFFFFF;
-    text-shadow:
-      0 3px 8px rgba(0,0,0,0.9),
-      0 3px 20px rgba(0,0,0,0.8);
-  }
-  .year{
-    font-size:14px;
-    letter-spacing:0.3em;
-    font-weight:400;
-  }
-  .venue-line{
-    margin:18px 0 0;
-    font-size:14px;
-    letter-spacing:0.12em;
-    line-height:1.6;
-    color:#FFFFFF;
-    font-weight:400;
-    text-shadow:
-      0 1px 4px rgba(0,0,0,0.9),
-      0 2px 10px rgba(0,0,0,0.7);
-  }
-  .lower-divider{
-    width:56px;
-    height:1px;
-    background:rgba(248,244,236,0.45);
-    margin:26px 0 20px;
-  }
-  .details-block{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-  }
-  #qrcode{
-    padding:8px;
-    background:#fff;
-    line-height:0;
-  }
-  .qr-caption{
-    font-size:10px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:rgba(248,244,236,0.8);
-    margin:0;
-  }
-  .btn{
-    display:inline-block;
-    margin-top:2px;
-    padding:11px 30px;
-    background:transparent;
-    color:var(--ivory);
-    text-decoration:none;
-    font-size:12px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    border:1px solid rgba(248,244,236,0.7);
-    transition:background 0.2s ease,color 0.2s ease;
-  }
-  .btn:hover{
     background:var(--ivory);
-    color:#221f1c;
+    color:var(--ink);
+    font-family: Garamond, "Palatino Linotype", "Book Antiqua", "Iowan Old Style", serif;
+    font-size:17px;
+    line-height:1.65;
   }
-  .btn:focus-visible{
-    outline:2px solid var(--ivory);
-    outline-offset:3px;
+  .display{
+    font-family: "Big Caslon", Didot, "Bodoni MT", Georgia, "Times New Roman", serif;
   }
-  .swap-note{
-    max-width:460px;
-    margin:16px auto 0;
+  .label{
+    font-family: Futura, "Century Gothic", "Trebuchet MS", sans-serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.72rem;
+  }
+
+  /* language toggle */
+  .lang-en [data-kin]{ display:none; }
+  .lang-kin [data-en]{ display:none; }
+
+  .langbar{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:center; padding:14px 0;
+    pointer-events:none;
+  }
+  .langtoggle{
+    pointer-events:auto;
+    display:flex; align-items:center; gap:0;
+    background:rgba(42,33,24,.82);
+    backdrop-filter:blur(6px);
+    border:1px solid var(--gold-soft);
+    border-radius:999px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.25);
+  }
+  .langtoggle button{
+    font-family: Futura, "Century Gothic", "Trebuchet MS", sans-serif;
+    letter-spacing:.15em;
+    font-size:.72rem;
+    text-transform:uppercase;
+    background:transparent;
+    color:var(--ivory-deep);
+    border:none;
+    padding:9px 20px;
+    cursor:pointer;
+    transition:background .35s ease, color .35s ease;
+  }
+  .langtoggle button:focus-visible{
+    outline:2px solid var(--gold-soft);
+    outline-offset:-2px;
+  }
+  .langtoggle button.active{
+    background:var(--gold);
+    color:var(--wine-deep);
+  }
+
+  section{ padding:88px 24px; }
+  .wrap{ max-width:760px; margin:0 auto; }
+  .rule{
+    width:56px; height:1px; background:var(--gold);
+    margin:26px auto;
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(173,138,70,.10), transparent 55%),
+      linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
+    color:var(--ivory-deep);
     text-align:center;
-    font-size:12px;
-    color:#8a8a8a;
+    overflow:hidden;
+    padding:64px 24px;
+  }
+  .hero-frame{
+    position:absolute; inset:22px;
+    border:1px solid rgba(201,173,115,.55);
+    pointer-events:none;
+  }
+  .corner{ position:absolute; width:110px; height:110px; opacity:.85; }
+  .corner svg{ width:100%; height:100%; }
+  .corner.tl{ top:34px; left:34px; }
+  .corner.tr{ top:34px; right:34px; transform:scaleX(-1); }
+  .corner.bl{ bottom:34px; left:34px; transform:scaleY(-1); }
+  .corner.br{ bottom:34px; right:34px; transform:scale(-1,-1); }
+
+  .hero-content{ position:relative; z-index:2; max-width:640px; }
+  .eyebrow{ color:var(--gold-soft); margin-bottom:22px; }
+  .monogram{
+    font-size:clamp(4.5rem, 14vw, 8rem);
+    line-height:.9;
+    color:var(--ivory);
+    letter-spacing:.02em;
+    margin:0;
+  }
+  .monogram em{ color:var(--gold-soft); font-style:normal; }
+  .names{
+    margin-top:22px;
+    font-size:clamp(1.15rem, 2.6vw, 1.55rem);
+    letter-spacing:.05em;
+    color:var(--ivory-deep);
+  }
+  .names b{ font-weight:600; color:var(--ivory); }
+  .hero .rule{ background:var(--gold-soft); }
+  .date-big{
+    font-size:clamp(1.6rem, 4vw, 2.3rem);
+    letter-spacing:.3em;
+    color:var(--gold-soft);
+    margin:8px 0 26px;
+  }
+  .verse-tiny{
+    font-size:.82rem; letter-spacing:.08em; color:rgba(248,241,227,.65);
+    font-style:italic;
+  }
+
+  /* VERSE */
+  .verse-section{ text-align:center; background:var(--ivory-deep); }
+  .verse-mark{ font-size:2rem; color:var(--gold); display:block; margin-bottom:6px; }
+  blockquote{
+    margin:0; font-size:clamp(1.15rem,2.4vw,1.5rem);
+    font-style:italic; color:var(--wine-deep); font-weight:500;
+  }
+  .verse-ref{ margin-top:16px; }
+  .verse-ref .label{ color:var(--sage); }
+
+  /* INVITATION TEXT */
+  .invite-section{ text-align:center; }
+  .invite-section p{ font-size:1.15rem; max-width:560px; margin:0 auto; }
+  .families{ margin-top:6px; }
+  .families b{ font-weight:700; }
+  .couple-names{
+    margin:34px 0;
+    font-size:clamp(1.5rem,3.4vw,2.1rem);
+    color:var(--wine);
+  }
+  .couple-names .amp{ color:var(--gold); display:block; font-size:1.1rem; margin:8px 0; }
+
+  /* TIMELINE */
+  .timeline-section{ background:var(--ivory-deep); }
+  .timeline-section .label{ text-align:center; display:block; color:var(--sage); margin-bottom:8px; }
+  .timeline-title{ text-align:center; margin:0 0 56px; color:var(--wine); }
+
+  .timeline{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    gap:28px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute; top:34px; left:8%; right:8%; height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent);
+  }
+  .event{
+    flex:1;
+    text-align:center;
+    position:relative;
+  }
+  .event-icon{
+    width:68px; height:68px;
+    margin:0 auto 18px;
+    background:var(--ivory);
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; z-index:2;
+  }
+  .event-icon svg{ width:30px; height:30px; stroke:var(--wine); }
+  .event-time{ color:var(--gold); font-size:.85rem; letter-spacing:.12em; margin-bottom:6px; }
+  .event-title{ font-weight:700; color:var(--wine); font-size:1.05rem; margin-bottom:8px; }
+  .event-place{ font-size:.92rem; color:var(--ink); opacity:.85; }
+  .ornament{
+    margin:4px auto 0; width:14px; height:14px; opacity:.7;
+  }
+
+  @media (max-width: 720px){
+    .timeline{ flex-direction:column; gap:44px; }
+    .timeline::before{ left:34px; right:auto; top:8%; bottom:8%; width:1px; height:auto; background:linear-gradient(180deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent); }
+  }
+
+  /* FOOTER / RSVP */
+  .footer-section{
+    background:linear-gradient(180deg, var(--wine-deep) 0%, var(--wine) 100%);
+    color:var(--ivory-deep);
+    text-align:center;
+  }
+  .footer-section .rule{ background:var(--gold-soft); }
+  .rsvp-line{
+    font-size:clamp(1.2rem,2.6vw,1.6rem);
+    font-style:italic; color:var(--ivory);
+    max-width:520px; margin:0 auto;
+  }
+  .contacts{
+    display:flex; justify-content:center; gap:64px; flex-wrap:wrap;
+    margin-top:52px;
+  }
+  .contact{ text-align:center; }
+  .contact-icon{
+    width:46px; height:46px; border-radius:50%;
+    background:rgba(201,173,115,.12); border:1px solid var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 12px;
+  }
+  .contact-icon svg{ width:20px; height:20px; stroke:var(--gold-soft); }
+  .contact-name{ letter-spacing:.14em; color:var(--gold-soft); margin-bottom:6px; }
+  .contact-phone{ font-size:.98rem; color:var(--ivory-deep); }
+  .closing{ margin-top:70px; color:rgba(248,241,227,.55); font-size:.8rem; letter-spacing:.1em; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
   }
 </style>
 </head>
 <body>
-  <div class="card">
-    <svg class="grain" preserveAspectRatio="none" width="100%" height="100%" aria-hidden="true">
-      <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
-      <rect width="100%" height="100%" filter="url(#n)"/>
-    </svg>
-    <div class="vignette"></div>
 
-    <div class="content">
-      <p class="script">Save the Date</p>
-      <p class="names">Egide &amp; Deborah</p>
+<div class="langbar">
+  <div class="langtoggle" role="group" aria-label="Language">
+    <button type="button" id="btn-en" class="active" aria-pressed="true">EN</button>
+    <button type="button" id="btn-kin" aria-pressed="false">KIN</button>
+  </div>
+</div>
 
-      <div class="spacer"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-frame"></div>
 
-      <div class="date-row">
-        <span class="date-line"></span>
-        <span class="month">FEB</span>
-        <span class="day">20    </span>
-        <span class="year">2027</span>
-        <span class="date-line"></span>
+  <div class="corner tl"><svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 C 40 6, 55 10, 60 30 C 64 46, 78 50, 100 50" stroke="#C9AD73" stroke-width="1"/><path d="M6 6 C 6 40, 10 55, 30 60 C 46 64, 50 78, 50 100" stroke="#C9AD73" stroke-width="1"/><circle cx="22" cy="22" r="4" stroke="#C9AD73" stroke-width="1"/><circle cx="38" cy="14" r="2.5" stroke="#C9AD73" stroke-width="1"/><circle cx="14" cy="38" r="2.5" stroke="#C9AD73" stroke-width="1"/></svg></div>
+  <div class="corner tr"><svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 C 40 6, 55 10, 60 30 C 64 46, 78 50, 100 50" stroke="#C9AD73" stroke-width="1"/><path d="M6 6 C 6 40, 10 55, 30 60 C 46 64, 50 78, 50 100" stroke="#C9AD73" stroke-width="1"/><circle cx="22" cy="22" r="4" stroke="#C9AD73" stroke-width="1"/><circle cx="38" cy="14" r="2.5" stroke="#C9AD73" stroke-width="1"/><circle cx="14" cy="38" r="2.5" stroke="#C9AD73" stroke-width="1"/></svg></div>
+  <div class="corner bl"><svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 C 40 6, 55 10, 60 30 C 64 46, 78 50, 100 50" stroke="#C9AD73" stroke-width="1"/><path d="M6 6 C 6 40, 10 55, 30 60 C 46 64, 50 78, 50 100" stroke="#C9AD73" stroke-width="1"/><circle cx="22" cy="22" r="4" stroke="#C9AD73" stroke-width="1"/><circle cx="38" cy="14" r="2.5" stroke="#C9AD73" stroke-width="1"/><circle cx="14" cy="38" r="2.5" stroke="#C9AD73" stroke-width="1"/></svg></div>
+  <div class="corner br"><svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6 C 40 6, 55 10, 60 30 C 64 46, 78 50, 100 50" stroke="#C9AD73" stroke-width="1"/><path d="M6 6 C 6 40, 10 55, 30 60 C 46 64, 50 78, 50 100" stroke="#C9AD73" stroke-width="1"/><circle cx="22" cy="22" r="4" stroke="#C9AD73" stroke-width="1"/><circle cx="38" cy="14" r="2.5" stroke="#C9AD73" stroke-width="1"/><circle cx="14" cy="38" r="2.5" stroke="#C9AD73" stroke-width="1"/></svg></div>
+
+  <div class="hero-content">
+    <div class="label eyebrow">
+      <span data-en>The Wedding Of</span>
+      <span data-kin>Ubukwe Bwa</span>
+    </div>
+    <p class="display monogram">E <em>&amp;</em> D</p>
+    <p class="names display">
+      <b>Egide Kwizera</b> <span data-en>&amp;</span><span data-kin>na</span> <b>Deborah Umutesi</b>
+    </p>
+    <div class="rule"></div>
+    <p class="date-big display">20 · 02 · 2027</p>
+    <p class="verse-tiny">Colossians 3:14 · Abakolosayi 3:14</p>
+  </div>
+</section>
+
+<!-- VERSE -->
+<section class="verse-section">
+  <div class="wrap">
+    <span class="verse-mark display">&#10078;</span>
+    <blockquote class="display">
+      <span data-en>&ldquo;And above all these things put on love, which is the bond of perfectness.&rdquo;</span>
+      <span data-kin>&ldquo;Ariko ibigeretse kuribyo byose mwambare urukundo, kuko ari rwo murunga wo gutungana rwose.&rdquo;</span>
+    </blockquote>
+    <div class="verse-ref label">
+      <span data-en>Colossians 3:14</span>
+      <span data-kin>Abakolosayi 3:14</span>
+    </div>
+  </div>
+</section>
+
+<!-- INVITATION -->
+<section class="invite-section">
+  <div class="wrap">
+    <p class="label" style="color:var(--sage)">
+      <span data-en>With Great Joy</span>
+      <span data-kin>Twishimye</span>
+    </p>
+    <p class="families">
+      <span data-en>The families of <b>Francois Haguma</b> and <b>...........</b> have great pleasure to invite you to the wedding ceremony of their children;</span>
+      <span data-kin>Umuryango wa <b>HAGUMA Francois</b> n'uwa <b>...........</b> bishimiye kubatumira mu bukwe bw'abana babo aribo:</span>
+    </p>
+    <p class="couple-names display">
+      Egide Kwizera
+      <span class="amp">&amp;</span>
+      Deborah Umutesi
+    </p>
+    <p class="families">
+      <span data-en>Which will take place on</span>
+      <span data-kin>Buzaba tariki ya</span>
+      &nbsp;<b>20/02/2027</b>.
+    </p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <span class="label">
+    <span data-en>The Celebration</span>
+    <span data-kin>Imihango</span>
+  </span>
+  <h3 class="display timeline-title">
+    <span data-en>Order Of The Day</span>
+    <span data-kin>Gahunda y'Umunsi</span>
+  </h3>
+
+  <div class="timeline">
+    <div class="event">
+      <div class="event-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 10c0-2 1.5-3 3-3 .5-1.5 2-2 3-1 1-1 2.5-1 3 0 1.5-1 3.5 0 3.5 2 1.5.3 2.5 1.5 2.5 3 0 3-3 5-7 5s-8-2-8-6z"/>
+          <circle cx="9" cy="9" r=".6" fill="var(--wine)"/>
+          <path d="M17 9c1 0 2 .5 2.5 1.5"/>
+        </svg>
       </div>
-      <p class="venue-line">Come and join us as we celebrate...</p>
+      <div class="event-time label">
+        <span data-en>09:00 AM</span>
+        <span data-kin>Saa 09h00 AM</span>
+      </div>
+      <div class="event-title display">
+        <span data-en>Introduction &amp; Dowry</span>
+        <span data-kin>Gusaba no Gukwa</span>
+      </div>
+      <div class="event-place">
+        <span data-en>Panorama Hope Garden</span>
+        <span data-kin>Panoroma Hope Garden</span><br>
+        Rebero &ndash; Kigali
+      </div>
+    </div>
 
-      <div class="lower-divider"></div>
+    <div class="event">
+      <div class="event-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v3M9 5h6l1 3H8l1-3z"/>
+          <path d="M6 10v11h12V10"/>
+          <path d="M6 10l6-4 6 4"/>
+          <path d="M10 21v-6h4v6"/>
+        </svg>
+      </div>
+      <div class="event-time label">
+        <span data-en>14:30 PM</span>
+        <span data-kin>Saa 14h30 PM</span>
+      </div>
+      <div class="event-title display">
+        <span data-en>Church Wedding</span>
+        <span data-kin>Gusezerana Imbere y'Imana</span>
+      </div>
+      <div class="event-place">
+        <span data-en>ADEPR Nyarugenge (International church)</span>
+        <span data-kin>ADEPR Nyarugenge (International church)</span><br>
+        Nyarugenge &ndash; Kigali
+      </div>
+    </div>
 
-      <div class="details-block">
-        <div id="qrcode"></div>
-        <p class="qr-caption">Scan for full details</p>
-        <a class="btn" href="https://egide-deborah.teclk.com" target="_blank" rel="noopener">View full details</a>
+    <div class="event">
+      <div class="event-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3l2 7a2 2 0 0 0 2 1.5 2 2 0 0 0 2-1.5l2-7"/>
+          <path d="M9 11v10M15 21H3M15 3l1.5 8a2 2 0 0 0 2 1.6 2 2 0 0 0 2-1.6L22 3M18.5 12.6V21M21 21h-5"/>
+        </svg>
+      </div>
+      <div class="event-time label">
+        <span data-en>Thereafter</span>
+        <span data-kin>Nyuma y'Imihango</span>
+      </div>
+      <div class="event-title display">
+        <span data-en>Reception</span>
+        <span data-kin>Ubukwe</span>
+      </div>
+      <div class="event-place">
+        <span data-en>Guests hosted at Panorama Hope Garden</span>
+        <span data-kin>Abatumiwe bazakirirwa muri Panorama Hope Garden</span><br>
+        Rebero &ndash; Kigali
       </div>
     </div>
   </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer-section">
+  <div class="wrap">
+    <p class="rsvp-line display">
+      <span data-en>Your presence would mean the world to us.</span>
+      <span data-kin>Kwifatanya natwe bizadushimisha.</span>
+    </p>
+    <div class="rule"></div>
+
+    <div class="contacts">
+      <div class="contact">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.2z"/></svg>
+        </div>
+        <div class="contact-name label">E. Egide</div>
+        <div class="contact-phone">+250 788 691 176 &nbsp;/&nbsp; +250 780 605 287</div>
+      </div>
+      <div class="contact">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.2z"/></svg>
+        </div>
+        <div class="contact-name label">D. Deborah</div>
+        <div class="contact-phone">...... &nbsp;/&nbsp; ......</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
-  new QRCode(document.getElementById("qrcode"), {
-    text: "https://egide-deborah.teclk.com",
-    width: 110,
-    height: 110,
-    colorDark: "#221f1c",
-    colorLight: "#FFFFFF",
-    correctLevel: QRCode.CorrectLevel.M
-  });
+  var html = document.documentElement;
+  var btnEn = document.getElementById('btn-en');
+  var btnKin = document.getElementById('btn-kin');
+
+  function setLang(lang){
+    html.className = 'lang-' + lang;
+    btnEn.classList.toggle('active', lang === 'en');
+    btnKin.classList.toggle('active', lang === 'kin');
+    btnEn.setAttribute('aria-pressed', lang === 'en');
+    btnKin.setAttribute('aria-pressed', lang === 'kin');
+  }
+
+  btnEn.addEventListener('click', function(){ setLang('en'); });
+  btnKin.addEventListener('click', function(){ setLang('kin'); });
 </script>
+
 </body>
 </html>
